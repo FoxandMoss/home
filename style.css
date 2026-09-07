@@ -1,7 +1,8 @@
 html {
   font-size: 62.5%;
   min-height: 100%;
-  background: #d8b894 url("fox-and-moss-botanical-background.png") center top / cover fixed no-repeat;
+  background: #d8b894 url("fox-and-moss-botanical-background.png") center top / cover no-repeat;
+  background-attachment: scroll;
 }
 
 body {
