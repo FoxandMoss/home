@@ -51,7 +51,8 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
-.eyebrow {
+.eyebrow,
+.section-label {
   margin: 0 0 .6rem;
   color: #e7b398;
   font-size: 1.35rem;
@@ -60,7 +61,7 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
-h1, h2 {
+h1, h2, h3 {
   margin-top: 0;
   font-weight: 300;
   line-height: 1.16;
@@ -75,7 +76,14 @@ h1 {
 h2 {
   margin-bottom: 2rem;
   color: #ffe6d4;
-  font-size: 3.2rem;
+  font-size: clamp(3.2rem, 6vw, 4.3rem);
+}
+
+h3 {
+  margin-bottom: .7rem;
+  color: #ffe6d4;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 p {
@@ -126,6 +134,42 @@ ul.main-menu li a.active {
   box-shadow: 0 10px 24px rgba(32, 18, 13, .28);
 }
 
+.app-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+  margin: 2.5rem 0 2.2rem;
+}
+
+.app-points > div {
+  padding: 1.7rem;
+  background: rgba(255, 242, 220, .09);
+  border: 1px solid rgba(255, 243, 222, .18);
+}
+
+.app-points p {
+  margin-bottom: 0;
+  font-size: 1.55rem;
+  line-height: 1.58;
+}
+
+.privacy-policy {
+  max-width: 68rem;
+}
+
+.privacy-policy h3 {
+  margin-top: 2.3rem;
+}
+
+.privacy-policy p {
+  max-width: 100%;
+}
+
+.updated {
+  color: rgba(255, 248, 237, .72);
+  font-size: 1.45rem;
+}
+
 .hide { display: none; }
 .show { display: block; }
 
@@ -147,6 +191,10 @@ ul.main-menu li a.active {
   footer {
     padding: 1.6rem 2rem;
   }
+
+  .app-points {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -157,5 +205,9 @@ ul.main-menu li a.active {
 
   .home-avatar {
     width: min(9rem, 25vw);
+  }
+
+  .app-points {
+    gap: 1.2rem;
   }
 }
