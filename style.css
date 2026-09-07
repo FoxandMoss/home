@@ -105,6 +105,27 @@ ul.main-menu li a.active {
   border-bottom-color: #e7b398;
 }
 
+.home-intro {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.home-intro > div {
+  flex: 1 1 30rem;
+}
+
+.home-avatar {
+  width: min(22rem, 36vw);
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid rgba(255, 243, 222, .42);
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgba(32, 18, 13, .28);
+}
+
 .hide { display: none; }
 .show { display: block; }
 
@@ -125,5 +146,16 @@ ul.main-menu li a.active {
 
   footer {
     padding: 1.6rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-intro {
+    align-items: flex-start;
+    gap: 1.8rem;
+  }
+
+  .home-avatar {
+    width: min(13rem, 37vw);
   }
 }
