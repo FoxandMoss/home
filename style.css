@@ -1,16 +1,23 @@
 html {
   font-size: 62.5%;
   min-height: 100%;
-  background: #d8b894 url("fox-and-moss-botanical-background.png") center top / auto 100vh no-repeat;
-  background-attachment: scroll;
+  background: #d8b894;
 }
 
 body {
   max-width: 800px;
   min-height: calc(100vh - 50px);
   margin: 25px auto;
+  position: relative;
+  isolation: isolate;
   color: #fff8ed;
   font: 400 1.7rem/1.7 "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+body::before {
+  position: fixed; z-index: -1; inset: -12vh -8vw;
+  background: #d8b894 url("fox-and-moss-botanical-background.png") center / cover no-repeat;
+  content: ""; transform: translate3d(0, var(--parallax-y, 0px), 0); will-change: transform;
 }
 
 header, #content, footer {
@@ -253,6 +260,8 @@ ul.main-menu li a.active {
   color: rgba(255, 248, 237, .76);
   font-size: 1.5rem;
 }
+
+@media (prefers-reduced-motion: reduce) { body::before { transform: none; will-change: auto; } }
 
 .hide { display: none; }
 .show { display: block; }
