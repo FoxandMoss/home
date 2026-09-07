@@ -3,7 +3,7 @@
 
   // The background stays viewport-sized while this small offset gives it depth.
   function updateParallax() {
-    var offset = reduceMotion.matches ? 0 : Math.max(window.scrollY * -0.04, -18);
+    var offset = reduceMotion.matches ? 0 : Math.max(window.scrollY * -0.09, -52);
     document.documentElement.style.setProperty("--parallax-y", offset + "px");
   }
 
