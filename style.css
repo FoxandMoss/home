@@ -10,12 +10,11 @@ html::before {
   position: fixed;
   z-index: 0;
   inset: 0;
-  background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% no-repeat;
+  background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center var(--artwork-y, 50%) / auto 118% no-repeat;
   content: "";
-  opacity: .20;
+  opacity: 1;
   pointer-events: none;
-  transform: translate3d(0, var(--parallax-y, 0px), 0);
-  will-change: transform;
+  will-change: background-position;
 }
 
 body {
@@ -280,7 +279,7 @@ ul.main-menu li a.active {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html::before { transform: none; will-change: auto; }
+  html::before { background-position: center 50%; will-change: auto; }
 }
 
 .hide { display: none; }
