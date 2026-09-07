@@ -1,10 +1,17 @@
 (function ($) {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  // The background stays viewport-sized while this small offset gives it depth.
-  function updateParallax() {
-    var offset = reduceMotion.matches ? 0 : Math.max(window.scrollY * -0.09, -52);
-    document.documentElement.style.setProperty("--parallax-y", offset + "px");
+  // The illustration is deliberately anchored to the page's scroll progress:
+  // top content reveals its top edge, the midpoint shows its center, and the
+  // final content aligns with its bottom edge.
+  function updateArtworkPosition() {
+    var maximumScroll = Math.max(
+      document.documentElement.scrollHeight - window.innerHeight,
+      1
+    );
+    var progress = Math.min(Math.max(window.scrollY / maximumScroll, 0), 1);
+    var position = reduceMotion.matches ? 50 : progress * 100;
+    document.documentElement.style.setProperty("--artwork-y", position + "%");
   }
 
   function showRegion() {
@@ -15,22 +22,19 @@
     $('.main-menu a[href="' + region + '"]').addClass('active');
   }
 
-  // Listen natively as well as through jQuery: browser hash jumps can finish
-  // after the initial ready callback, and this keeps the floral layer in sync.
-  function scheduleParallax() {
-    window.requestAnimationFrame(updateParallax);
+  function scheduleArtworkPosition() {
+    window.requestAnimationFrame(updateArtworkPosition);
   }
 
-  window.addEventListener('scroll', scheduleParallax, { passive: true });
-  document.addEventListener('scroll', scheduleParallax, { passive: true });
-  window.addEventListener('resize', scheduleParallax);
+  window.addEventListener('scroll', scheduleArtworkPosition, { passive: true });
+  document.addEventListener('scroll', scheduleArtworkPosition, { passive: true });
+  window.addEventListener('resize', scheduleArtworkPosition);
   $(window).on('hashchange', function () {
     showRegion();
-    scheduleParallax();
+    scheduleArtworkPosition();
   });
   $(function () {
-    updateParallax();
     showRegion();
-    scheduleParallax();
+    scheduleArtworkPosition();
   });
 })(jQuery);
