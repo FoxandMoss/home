@@ -18,7 +18,7 @@ body::before {
   /* Portrait uses its own tall illustration. Exact sizing protects the floral
      frame at every edge instead of cropping its top or footer artwork. */
   position: fixed;
-  z-index: -2;
+  z-index: 0;
   inset: 0;
   background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% no-repeat;
   content: "";
@@ -29,7 +29,7 @@ body::before {
    it creates depth on scroll without revealing a blank or cropped border. */
 body::after {
   position: fixed;
-  z-index: -1;
+  z-index: 1;
   inset: 0;
   background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% no-repeat;
   content: "";
@@ -48,6 +48,8 @@ body::after {
 }
 
 header, #content, footer {
+  position: relative;
+  z-index: 2;
   background: rgba(62, 38, 29, .78);
   border: 1px solid rgba(255, 243, 222, .28);
   box-shadow: 0 10px 28px rgba(61, 37, 25, .18);
