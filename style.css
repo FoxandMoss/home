@@ -12,7 +12,7 @@ html::before {
   inset: 0;
   background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% no-repeat;
   content: "";
-  opacity: .12;
+  opacity: .20;
   pointer-events: none;
   transform: translate3d(0, var(--parallax-y, 0px), 0);
   will-change: transform;
