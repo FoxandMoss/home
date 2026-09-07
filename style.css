@@ -116,7 +116,7 @@ ul.main-menu li a.active {
 }
 
 .home-avatar {
-  width: min(22rem, 36vw);
+  width: min(12rem, 24vw);
   aspect-ratio: 1 / 1;
   flex: 0 0 auto;
   object-fit: cover;
@@ -152,10 +152,10 @@ ul.main-menu li a.active {
 @media (max-width: 480px) {
   .home-intro {
     align-items: flex-start;
-    gap: 1.8rem;
+    gap: 1.4rem;
   }
 
   .home-avatar {
-    width: min(13rem, 37vw);
+    width: min(9rem, 25vw);
   }
 }
