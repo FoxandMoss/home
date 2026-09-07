@@ -1,7 +1,7 @@
 // Wait for the document to load before running the script 
 (function ($) {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var updateParallax = function () { document.documentElement.style.setProperty("--parallax-y", (reduceMotion.matches ? 0 : Math.min(window.scrollY * -0.08, 72)) + "px"); };
+  var updateParallax = function () { document.documentElement.style.setProperty("--parallax-y", (reduceMotion.matches ? 0 : Math.max(window.scrollY * -0.08, -72)) + "px"); };
   $(window).on("scroll resize", updateParallax);
   updateParallax();
   
