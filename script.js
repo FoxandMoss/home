@@ -15,10 +15,22 @@
     $('.main-menu a[href="' + region + '"]').addClass('active');
   }
 
-  $(window).on('scroll resize', updateParallax);
-  $(window).on('hashchange', showRegion);
+  // Listen natively as well as through jQuery: browser hash jumps can finish
+  // after the initial ready callback, and this keeps the floral layer in sync.
+  function scheduleParallax() {
+    window.requestAnimationFrame(updateParallax);
+  }
+
+  window.addEventListener('scroll', scheduleParallax, { passive: true });
+  document.addEventListener('scroll', scheduleParallax, { passive: true });
+  window.addEventListener('resize', scheduleParallax);
+  $(window).on('hashchange', function () {
+    showRegion();
+    scheduleParallax();
+  });
   $(function () {
     updateParallax();
     showRegion();
+    scheduleParallax();
   });
 })(jQuery);
