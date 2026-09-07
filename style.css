@@ -15,9 +15,36 @@ body {
 }
 
 body::before {
-  position: fixed; z-index: -1; inset: -12vh -8vw;
-  background: #d8b894 url("fox-and-moss-botanical-background.png") center / cover no-repeat;
-  content: ""; transform: translate3d(0, var(--parallax-y, 0px), 0); will-change: transform;
+  /* Portrait uses its own tall illustration. Exact sizing protects the floral
+     frame at every edge instead of cropping its top or footer artwork. */
+  position: fixed;
+  z-index: -2;
+  inset: 0;
+  background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+/* The full frame remains visible at every edge. A faint moving duplicate above
+   it creates depth on scroll without revealing a blank or cropped border. */
+body::after {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% no-repeat;
+  content: "";
+  opacity: .12;
+  pointer-events: none;
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+  will-change: transform;
+}
+
+/* A wide viewport gets the original horizontal frame, also shown in full. */
+@media (orientation: landscape) {
+  body::before,
+  body::after {
+    background-image: url("fox-and-moss-botanical-background.png");
+  }
 }
 
 header, #content, footer {
@@ -261,7 +288,9 @@ ul.main-menu li a.active {
   font-size: 1.5rem;
 }
 
-@media (prefers-reduced-motion: reduce) { body::before { transform: none; will-change: auto; } }
+@media (prefers-reduced-motion: reduce) {
+  body::after { transform: none; will-change: auto; }
+}
 
 .hide { display: none; }
 .show { display: block; }
