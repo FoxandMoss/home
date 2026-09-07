@@ -1,35 +1,14 @@
 html {
   font-size: 62.5%;
   min-height: 100%;
-  background: #d8b894;
+  background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% fixed no-repeat;
 }
 
-body {
-  max-width: 800px;
-  min-height: calc(100vh - 50px);
-  margin: 25px auto;
-  position: relative;
-  isolation: isolate;
-  color: #fff8ed;
-  font: 400 1.7rem/1.7 "Roboto", "Helvetica Neue", Arial, sans-serif;
-}
-
-body::before {
-  /* Portrait uses its own tall illustration. Exact sizing protects the floral
-     frame at every edge instead of cropping its top or footer artwork. */
+/* The complete floral frame paints on the page canvas, so it is never hidden
+   by a browser stacking context. */
+html::before {
   position: fixed;
   z-index: 0;
-  inset: 0;
-  background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% no-repeat;
-  content: "";
-  pointer-events: none;
-}
-
-/* The full frame remains visible at every edge. A faint moving duplicate above
-   it creates depth on scroll without revealing a blank or cropped border. */
-body::after {
-  position: fixed;
-  z-index: 1;
   inset: 0;
   background: #d8b894 url("fox-and-moss-botanical-background-portrait.jpg") center / 100% 100% no-repeat;
   content: "";
@@ -39,10 +18,20 @@ body::after {
   will-change: transform;
 }
 
-/* A wide viewport gets the original horizontal frame, also shown in full. */
+body {
+  max-width: 800px;
+  min-height: calc(100vh - 50px);
+  margin: 25px auto;
+  position: relative;
+  z-index: 1;
+  color: #fff8ed;
+  font: 400 1.7rem/1.7 "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Landscape uses the original wide illustration, also in full. */
 @media (orientation: landscape) {
-  body::before,
-  body::after {
+  html,
+  html::before {
     background-image: url("fox-and-moss-botanical-background.png");
   }
 }
@@ -291,7 +280,7 @@ ul.main-menu li a.active {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::after { transform: none; will-change: auto; }
+  html::before { transform: none; will-change: auto; }
 }
 
 .hide { display: none; }
