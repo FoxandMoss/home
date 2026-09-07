@@ -1,5 +1,9 @@
 // Wait for the document to load before running the script 
 (function ($) {
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var updateParallax = function () { document.documentElement.style.setProperty("--parallax-y", (reduceMotion.matches ? 0 : Math.min(window.scrollY * -0.08, 72)) + "px"); };
+  $(window).on("scroll resize", updateParallax);
+  updateParallax();
   
   // We use some Javascript and the URL #fragment to hide/show different parts of the page
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Linking_to_an_element_on_the_same_page
