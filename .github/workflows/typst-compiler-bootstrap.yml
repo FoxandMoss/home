@@ -1,0 +1,36 @@
+name: Typst Compiler Bootstrap
+
+on:
+  push:
+    branches:
+      - typst-bridge-test
+    paths:
+      - ".github/workflows/typst-compiler-bootstrap.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install Typst
+        uses: typst-community/setup-typst@v5
+
+      - name: Package compiler
+        run: |
+          mkdir -p typst-tool
+          cp "$(command -v typst)" typst-tool/typst
+          chmod +x typst-tool/typst
+          typst --version > typst-tool/VERSION.txt
+
+      - name: Upload compiler
+        uses: actions/upload-artifact@v4
+        with:
+          name: typst-linux-x86_64
+          path: typst-tool/
+          if-no-files-found: error
