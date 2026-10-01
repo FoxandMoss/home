@@ -60,4 +60,14 @@ Web technology changes rapidly, and it easy to get lost in the hype. Learning th
 - Strikingly (free tier includes single product store)
 - Big Cartel, Shopify, Etsy (e-commerce)
 
+## Universal file-inspection rule
 
+When work requires examining a file that lives in the user's Google Drive, use this working path:
+
+**Google Drive → GitHub workspace → AI inspection → GitHub workspace → Google Drive.**
+
+Do not treat GitHub's ability to access a Drive file as equivalent to having inspected it. Pull a working copy into the GitHub Actions workspace for inspection and processing, without permanently committing source files merely for inspection. Use the inspection results in the work, then return finished review outputs to the user's Google Drive when appropriate.
+
+The configured Google Drive root is recursively searchable. Relevant files may be inside any subfolder beneath that root and must be discovered there rather than requiring manual file-by-file instructions.
+
+This rule applies across source files, documents, images, proofs, builds, and review materials, and remains in force unless the user explicitly changes it.
