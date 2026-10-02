@@ -334,3 +334,7 @@ ul.main-menu li a.active {
     padding-left: 1.4rem;
   }
 }
+
+.writer-downloads { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.writer-download { display: inline-block; padding: 10px 16px; border: 1px solid currentColor; border-radius: 8px; text-decoration: none; }
+.writer-download:hover, .writer-download:focus { text-decoration: underline; }
