@@ -336,8 +336,8 @@ ul.main-menu li a.active {
 }
 
 .download-note { margin-bottom: 1.2rem; }
-.writer-downloads { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-.writer-download { display: inline-flex; align-items: center; gap: .7rem; padding: 10px 16px; border: 1px solid currentColor; border-radius: 8px; text-decoration: none; }
+.writer-downloads { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin: 22px auto 0; }
+.writer-download { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; min-width: 18rem; padding: 12px 20px; font-size: 1.65rem; border: 1px solid currentColor; border-radius: 8px; text-decoration: none; }
 .writer-download:hover, .writer-download:focus { text-decoration: underline; }
 .writer-download small { font-size: 1.15rem; opacity: .72; }
 .writer-download-disabled { color: rgba(255, 248, 237, .48); border-color: rgba(255, 248, 237, .28); cursor: not-allowed; user-select: none; }
@@ -362,4 +362,37 @@ ul.main-menu li a.active {
 .faq-item[open] > summary::after {
   content: "›";
   transform: rotate(90deg);
+}
+
+
+.faq-group {
+  margin: 1.4rem 0;
+  background: rgba(255, 242, 220, .05);
+}
+
+.faq-group > summary {
+  font-size: 1.95rem;
+  font-weight: 500;
+}
+
+.faq-group > summary::after {
+  content: "›";
+  font-size: 2.4rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform .15s ease;
+}
+
+.faq-group[open] > summary::after {
+  content: "›";
+  transform: rotate(90deg);
+}
+
+.faq-group-body {
+  padding: .3rem 1.2rem 1.2rem;
+}
+
+.faq-group-body .faq-item {
+  margin: .9rem 0;
+  background: rgba(255, 242, 220, .045);
 }
