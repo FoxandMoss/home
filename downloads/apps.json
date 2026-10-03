@@ -1,9 +1,8 @@
 {
   "wordleaf": {
     "windows": {
-      "status": "available",
-      "url": "https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe",
-      "label": "Download free"
+      "status": "coming_soon",
+      "label": "Updated installer publishing"
     },
     "mac": {
       "status": "coming_soon",
@@ -12,9 +11,8 @@
   },
   "nalia": {
     "windows": {
-      "status": "available",
-      "url": "https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe",
-      "label": "Download"
+      "status": "coming_soon",
+      "label": "Updated installer publishing"
     },
     "mac": {
       "status": "coming_soon",
