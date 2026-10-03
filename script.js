@@ -19,6 +19,61 @@
     );
   }
 
+  function applyDownloadManifest(manifest) {
+    document.querySelectorAll('[data-download-app][data-download-platform]').forEach(function (node) {
+      var app = node.getAttribute('data-download-app');
+      var platform = node.getAttribute('data-download-platform');
+      var entry = manifest && manifest[app] && manifest[app][platform];
+      if (!entry) return;
+
+      var available = entry.status === 'available' && entry.url;
+      var desiredTag = available ? 'A' : 'SPAN';
+      var current = node;
+
+      if (node.tagName !== desiredTag) {
+        var replacement = document.createElement(desiredTag.toLowerCase());
+        Array.from(node.attributes).forEach(function (attr) {
+          if (attr.name !== 'href') replacement.setAttribute(attr.name, attr.value);
+        });
+        replacement.innerHTML = node.innerHTML;
+        node.replaceWith(replacement);
+        current = replacement;
+      }
+
+      if (available) {
+        current.setAttribute('href', entry.url);
+        current.removeAttribute('aria-disabled');
+        current.classList.remove('platform-action-disabled', 'writer-download-disabled');
+      } else {
+        current.removeAttribute('href');
+        current.setAttribute('aria-disabled', 'true');
+        if (current.classList.contains('platform-action')) current.classList.add('platform-action-disabled');
+        if (current.classList.contains('writer-download')) current.classList.add('writer-download-disabled');
+      }
+
+      var label = current.querySelector('.platform-status, small');
+      if (label && entry.label) label.textContent = entry.label;
+    });
+
+    document.querySelectorAll('[data-download-label]').forEach(function (node) {
+      var parts = node.getAttribute('data-download-label').split(':');
+      var entry = manifest && manifest[parts[0]] && manifest[parts[0]][parts[1]];
+      if (entry && entry.label) node.textContent = entry.label;
+    });
+  }
+
+  function refreshDownloadManifest() {
+    fetch('./downloads/apps.json', { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('download manifest unavailable');
+        return response.json();
+      })
+      .then(applyDownloadManifest)
+      .catch(function () {
+        // Keep the hard-coded links/statuses as a safe fallback.
+      });
+  }
+
   function showRegion() {
     $('.content-region').hide();
     $('.main-menu a').removeClass('active');
@@ -51,6 +106,7 @@
   });
 
   $(function () {
+    refreshDownloadManifest();
     showRegion();
     scheduleArtworkPosition();
   });
