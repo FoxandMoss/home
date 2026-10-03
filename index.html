@@ -2,23 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Fox &amp; Moss | Emira, Wordleaf and Nalia</title>
-    <meta name="description" content="Fox & Moss makes Emira, Wordleaf, and Nalia: a calm life calendar, a voice-first writing program, and an accessibility-first hands-free computer assistant.">
+    <title>Fox &amp; Moss | Emira, Wordleaf, Nalia and Storage Guard</title>
+    <meta name="description" content="Fox & Moss makes Emira, Wordleaf, Nalia, and Storage Guard: calm, accessible software for life planning, writing, hands-free computer use, and storage health.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Fox & Moss">
     <link rel="canonical" href="https://foxandmoss.github.io/home/">
-    <meta property="og:title" content="Fox & Moss | Emira and Wordleaf">
-    <meta property="og:description" content="Emira is a calm life calendar. Wordleaf is a free voice-first writing and formatting program. Nalia is an accessibility-first hands-free computer assistant.">
+    <meta property="og:title" content="Fox & Moss | Things made with care">
+    <meta property="og:description" content="Emira is a native iOS life calendar. Wordleaf is a free voice-first writing app. Nalia is an accessibility-first desktop assistant. Storage Guard keeps local drives readable and healthy.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://foxandmoss.github.io/home/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Fox & Moss | Emira and Wordleaf">
-    <meta name="twitter:description" content="Fox & Moss makes Emira, Wordleaf, and Nalia.">
+    <meta name="twitter:title" content="Fox & Moss | Things made with care">
+    <meta name="twitter:description" content="Fox & Moss makes Emira, Wordleaf, Nalia, and Storage Guard.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alice&amp;display=swap" rel="stylesheet">
-    <link href="style.css?v=20261003-layout" rel="stylesheet">
+    <link href="style.css?v=20261003-app-downloads" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script type="application/ld+json">
 {
@@ -42,6 +42,7 @@
           <li><a href="#emira">Emira</a></li>
           <li><a href="#wordleaf">Wordleaf</a></li>
           <li><a href="#nalia">Nalia</a></li>
+          <li><a href="#storage-guard">Storage Guard</a></li>
           <!-- Aubrey is intentionally hidden from the public navigation for now.
           <li><a href="#aubrey">Aubrey</a></li>
           -->
@@ -57,7 +58,7 @@
               <div>
                 <h2>Home</h2>
                 <p>A quiet corner for the things I make.</p>
-                <p>Fox &amp; Moss is home to Emira, Wordleaf, and Nalia. They are different tools, but they share the same idea: software should make ordinary things easier without making you fight the interface.</p>
+                <p>Fox &amp; Moss is home to Emira, Wordleaf, Nalia, and Storage Guard. They are different tools, but they share the same idea: software should make ordinary things easier without making you fight the interface.</p>
               </div>
               <!-- Home/profile picture is intentionally hidden for now.
               <img class="home-avatar" src="fox-and-moss-avatar.jpg" alt="A warm illustrated portrait with copper hair, pointed ears, and small gold stars.">
@@ -80,14 +81,32 @@
                 <p>An always-on, accessibility-first computer assistant that listens naturally, understands the current screen and context, and carries out computer tasks without push-to-talk.</p>
                 <p><a href="./nalia/">Read about Nalia</a></p>
               </div>
+              <div>
+                <h3>Storage Guard</h3>
+                <p>A tiny desktop tray utility that guards free space, shows what is inside folders, and cleans only known-safe clutter.</p>
+                <p><a href="#storage-guard">Read about Storage Guard</a></p>
+              </div>
             </div>
           </section>
 
           <section id="emira" class="content-region hide">
             <p class="section-label">Emira</p>
-            <h2>Your life is more than a list of things to get done.</h2>
-            <p class="app-principle"><strong>Emira is a life calendar where you can set goals, keep memories, journal, and play relaxing games.</strong></p>
-            <p class="intro-summary">A quiet place to keep track of the life you are already living, without turning it into a productivity score.</p>
+            <div class="app-hero">
+              <div class="app-hero-copy">
+                <h2>Your life is more than a list of things to get done.</h2>
+                <p class="app-principle"><strong>Emira is a native iPhone and iPad life calendar where you can set goals, keep memories, journal, and play relaxing games.</strong></p>
+                <p class="intro-summary">A quiet place to keep track of the life you are already living, without turning it into a productivity score.</p>
+              </div>
+              <aside class="app-download-card app-status-card" aria-label="Emira availability">
+                <p class="app-download-card-kicker">Native iOS app</p>
+                <div class="app-download-grid single-platform">
+                  <span class="platform-action platform-action-disabled" aria-disabled="true">
+                    <strong class="platform-name">iPhone + iPad</strong>
+                    <small class="platform-status">Coming soon to iOS</small>
+                  </span>
+                </div>
+              </aside>
+            </div>
 
             <div class="app-points">
               <div><h3>Life Calendar</h3><p>See your life in weeks, months, and years. You choose the life-expectancy frame yourself. It gives the calendar a shape, but Emira does not turn it into a death countdown or tell you how much time you have left.</p></div>
@@ -445,16 +464,25 @@
           -->
           <section id="wordleaf" class="content-region hide">
             <p class="section-label">Wordleaf</p>
-            <h2>Write with your voice.</h2>
-            <p class="app-principle"><strong>Writing should be free and accessible.</strong></p>
-            <p class="intro-summary">Dictate, format, organize, and finish a document without stopping to hunt through menus. Wordleaf is built so your voice can do most of the work, while typing stays available whenever you want it.</p>
-
-            <div class="early-download" aria-label="Wordleaf Windows download">
-              <p class="download-note"><strong>Wordleaf is free for Windows.</strong></p>
-              <div class="writer-downloads">
-                <a class="writer-download" href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe" aria-label="Download Wordleaf — Free for Windows">Download Wordleaf — Free for Windows</a>
+            <div class="app-hero">
+              <div class="app-hero-copy">
+                <h2>Write with your voice.</h2>
+                <p class="app-principle"><strong>Writing should be free and accessible.</strong></p>
+                <p class="intro-summary">Dictate, format, organize, and finish a document without stopping to hunt through menus. Wordleaf is built so your voice can do most of the work, while typing stays available whenever you want it.</p>
               </div>
-              <p class="release-note">Official Fox &amp; Moss GitHub release. <a href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest">View release details</a>.</p>
+              <aside class="app-download-card" aria-label="Wordleaf downloads">
+                <p class="app-download-card-kicker">Free desktop app</p>
+                <div class="app-download-grid">
+                  <a class="platform-action" href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe" aria-label="Download Wordleaf free for Windows">
+                    <strong class="platform-name">Windows</strong>
+                    <small class="platform-status">Download free</small>
+                  </a>
+                  <span class="platform-action platform-action-disabled" aria-disabled="true">
+                    <strong class="platform-name">Mac</strong>
+                    <small class="platform-status">Coming soon</small>
+                  </span>
+                </div>
+              </aside>
             </div>
 
             <div class="app-points">
@@ -857,10 +885,27 @@
           -->
           <section id="nalia" class="content-region hide">
             <p class="section-label">Nalia</p>
-            <h2>Use your computer without fighting the interface.</h2>
-            <p class="app-principle"><strong>Speak naturally. Nalia handles the computer.</strong></p>
-            <p>Nalia stands for <strong>Natural Adaptive Language Interface Assistant</strong>. It is built around continuous hands-free computer use: no wake word, no push-to-talk button, and no command box you have to keep returning to.</p>
-            <p>Nalia listens locally, keeps track of the current computer context, and can use what is on screen to understand ordinary requests such as opening an app, switching context, searching, typing into the current field, or carrying out a small computer task.</p>
+            <div class="app-hero">
+              <div class="app-hero-copy">
+                <h2>Use your computer without fighting the interface.</h2>
+                <p class="app-principle"><strong>Speak naturally. Nalia handles the computer.</strong></p>
+                <p class="intro-summary">Nalia is a local-first desktop assistant for continuous hands-free computer use: no wake word, no push-to-talk button, and no command box you have to keep returning to.</p>
+              </div>
+              <aside class="app-download-card" aria-label="Nalia downloads">
+                <p class="app-download-card-kicker">Desktop app</p>
+                <div class="app-download-grid">
+                  <a class="platform-action" href="https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe" aria-label="Download Nalia for Windows">
+                    <strong class="platform-name">Windows</strong>
+                    <small class="platform-status">Download</small>
+                  </a>
+                  <span class="platform-action platform-action-disabled" aria-disabled="true">
+                    <strong class="platform-name">Mac</strong>
+                    <small class="platform-status">Coming soon</small>
+                  </span>
+                </div>
+              </aside>
+            </div>
+            <p>Nalia stands for <strong>Natural Adaptive Language Interface Assistant</strong>. It listens locally, keeps track of the current computer context, and can use what is on screen to understand ordinary requests such as opening an app, switching context, searching, typing into the current field, or carrying out a small computer task.</p>
 
             <div class="app-points">
               <div><h3>Always listening</h3><p>After setup, dictation stays available in the background. Nalia is designed to recover its own listening and screen services instead of assuming you can reach a button to restart them.</p></div>
@@ -877,6 +922,7 @@
             <p class="download-note">Nalia is an experimental Windows project. The Windows installer uses the public release channel so the same download link can continue to fetch the newest build.</p>
             <div class="writer-downloads" aria-label="Nalia downloads">
               <a class="writer-download" href="https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe" aria-label="Download Nalia for Windows">Download for Windows</a>
+              <span class="writer-download writer-download-disabled" aria-disabled="true">Download for Mac <small>Coming soon</small></span>
             </div>
 
             <section class="wordleaf-faq" aria-labelledby="nalia-faq-title">
@@ -899,6 +945,43 @@
                 </div>
               </details>
             </section>
+          </section>
+
+
+          <section id="storage-guard" class="content-region hide">
+            <p class="section-label">Storage Guard</p>
+            <div class="app-hero">
+              <div class="app-hero-copy">
+                <h2>Keep your drives from quietly filling up.</h2>
+                <p class="app-principle"><strong>A tiny tray app that guards free space and makes storage easy to read.</strong></p>
+                <p class="intro-summary">Set a free-space guard for each drive. Storage Guard shows folder size plus how many files and folders are inside, warns before a guarded drive gets too full, and only cleans locations it can classify as safe or rebuildable.</p>
+              </div>
+              <aside class="app-download-card" aria-label="Storage Guard downloads">
+                <p class="app-download-card-kicker">Free desktop utility</p>
+                <div class="app-download-grid">
+                  <a class="platform-action" href="./downloads/StorageGuard-Windows-Installer.exe" aria-label="Download Storage Guard free for Windows">
+                    <strong class="platform-name">Windows</strong>
+                    <small class="platform-status">Download free</small>
+                  </a>
+                  <span class="platform-action platform-action-disabled" aria-disabled="true">
+                    <strong class="platform-name">Mac</strong>
+                    <small class="platform-status">Coming soon</small>
+                  </span>
+                </div>
+              </aside>
+            </div>
+
+            <div class="app-points">
+              <div><h3>Guard each drive</h3><p>Choose how much free space a drive should keep and, when useful, which other local drive should be suggested for large data.</p></div>
+              <div><h3>See what is actually inside</h3><p>Drill into folders sorted by size and see both storage used and the number of files and folders inside them.</p></div>
+              <div><h3>Clean carefully</h3><p>Temporary files, old installers, portable test copies, and rebuildable developer output can be handled separately from protected Windows data and personal files.</p></div>
+            </div>
+
+            <p class="download-note">Storage Guard runs locally and does not bundle an AI model or a browser engine.</p>
+            <div class="writer-downloads" aria-label="Storage Guard downloads">
+              <a class="writer-download" href="./downloads/StorageGuard-Windows-Installer.exe" aria-label="Download Storage Guard free for Windows">Download for Windows</a>
+              <span class="writer-download writer-download-disabled" aria-disabled="true">Download for Mac <small>Coming soon</small></span>
+            </div>
           </section>
 
           <!-- AUBREY IS HIDDEN FOR NOW.
