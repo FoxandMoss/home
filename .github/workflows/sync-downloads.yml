@@ -1,0 +1,94 @@
+name: Sync verified desktop downloads
+
+on:
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [gh-pages]
+    paths:
+      - "downloads/release-policy.json"
+      - ".github/workflows/sync-downloads.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Check latest verified public releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, re, urllib.request
+          from pathlib import Path
+
+          apps_path = Path("downloads/apps.json")
+          policy_path = Path("downloads/release-policy.json")
+          apps = json.loads(apps_path.read_text())
+          policy = json.loads(policy_path.read_text())
+
+          def version_tuple(value):
+              nums = re.findall(r"\d+", value or "")
+              return tuple(int(x) for x in nums[:4])
+
+          token = os.environ.get("GITHUB_TOKEN", "")
+
+          for app, rule in policy.items():
+              req = urllib.request.Request(
+                  f"https://api.github.com/repos/{rule['repo']}/releases/latest",
+                  headers={
+                      "Accept": "application/vnd.github+json",
+                      "User-Agent": "FoxAndMoss-download-sync",
+                      **({"Authorization": f"Bearer {token}"} if token else {}),
+                  },
+              )
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      release = json.load(response)
+                  latest = version_tuple(release.get("tag_name", ""))
+                  minimum = version_tuple(rule["minimumVersion"])
+                  assets = {a.get("name") for a in release.get("assets", [])}
+                  verified = latest >= minimum and rule["asset"] in assets
+              except Exception as exc:
+                  print(f"{app}: release check failed: {exc}")
+                  verified = False
+
+              if verified:
+                  apps[app]["windows"] = {
+                      "status": "available",
+                      "url": rule["url"],
+                      "label": rule.get("label", "Download"),
+                  }
+                  print(f"{app}: enabled verified latest release")
+              else:
+                  apps[app]["windows"] = {
+                      "status": "coming_soon",
+                      "label": "Updated installer publishing",
+                  }
+                  print(f"{app}: kept disabled; verified replacement not ready")
+
+          apps_path.write_text(json.dumps(apps, indent=2) + "\n")
+          PY
+
+      - name: Commit manifest only when state changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- downloads/apps.json; then
+            echo "Download manifest already matches verified releases."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/apps.json
+          git commit -m "Sync verified desktop download availability"
+          git push origin HEAD:gh-pages
