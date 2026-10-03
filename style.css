@@ -727,12 +727,23 @@ a.platform-action:focus {
 
 @media (max-width: 680px) {
   .app-hero {
-    grid-template-columns: 1fr;
-    gap: 1.4rem;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .app-hero-copy,
+  .app-hero-copy > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .app-download-card {
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1.4rem;
     aspect-ratio: auto;
   }
 
