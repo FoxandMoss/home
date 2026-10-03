@@ -1,17 +1,22 @@
 (function ($) {
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var framePending = false;
 
-  // The illustration is deliberately anchored to the page's scroll progress:
-  // top content reveals its top edge, the midpoint shows its center, and the
-  // final content aligns with its bottom edge.
+  // Map page scroll progress directly to artwork progress.
+  // Page top = artwork top. Page bottom = artwork bottom.
+  // The artwork's scale is fixed in CSS, so scrolling only moves it vertically.
   function updateArtworkPosition() {
-    var maximumScroll = Math.max(
-      document.documentElement.scrollHeight - window.innerHeight,
-      1
+    framePending = false;
+
+    var scroller = document.scrollingElement || document.documentElement;
+    var maximumScroll = Math.max(scroller.scrollHeight - scroller.clientHeight, 0);
+    var progress = maximumScroll > 0
+      ? Math.min(Math.max(scroller.scrollTop / maximumScroll, 0), 1)
+      : 0;
+
+    document.documentElement.style.setProperty(
+      "--artwork-y",
+      (progress * 100).toFixed(4) + "%"
     );
-    var progress = Math.min(Math.max(window.scrollY / maximumScroll, 0), 1);
-    var position = reduceMotion.matches ? 50 : progress * 100;
-    document.documentElement.style.setProperty("--artwork-y", position + "%");
   }
 
   function showRegion() {
@@ -23,16 +28,28 @@
   }
 
   function scheduleArtworkPosition() {
+    if (framePending) return;
+    framePending = true;
     window.requestAnimationFrame(updateArtworkPosition);
   }
 
   window.addEventListener('scroll', scheduleArtworkPosition, { passive: true });
-  document.addEventListener('scroll', scheduleArtworkPosition, { passive: true });
   window.addEventListener('resize', scheduleArtworkPosition);
+
+  // Opening FAQ/disclosure rows changes the page length, so recalculate the
+  // progress mapping immediately instead of waiting for the next scroll event.
+  document.addEventListener('toggle', scheduleArtworkPosition, true);
+
+  if ('ResizeObserver' in window) {
+    var resizeObserver = new ResizeObserver(scheduleArtworkPosition);
+    resizeObserver.observe(document.body);
+  }
+
   $(window).on('hashchange', function () {
     showRegion();
     scheduleArtworkPosition();
   });
+
   $(function () {
     showRegion();
     scheduleArtworkPosition();
