@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alice&amp;display=swap" rel="stylesheet">
-    <link href="style.css?v=20261003-nalia" rel="stylesheet">
+    <link href="style.css?v=20261003-layout" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script type="application/ld+json">
 {
@@ -87,17 +87,20 @@
             <p class="section-label">Emira</p>
             <h2>Your life is more than a list of things to get done.</h2>
             <p class="app-principle"><strong>Emira is a life calendar where you can set goals, keep memories, journal, and play relaxing games.</strong></p>
-            <p>It is for keeping track of the life you are already living, not measuring how productive you are. Planning is part of it, but so is remembering things, looking back, changing your mind, or just opening the app because you like being there.</p>
-
-            <h3>What Emira is for</h3>
-            <p>The Life Calendar is the center of Emira. It lets you see your life laid out as time instead of only looking at one day or one month at a time. Around that are places for things you might want to do, things that already happened, things you want to write down, and things you want to leave for yourself later.</p>
-            <p>The point is not to squeeze more out of every day. Emira is supposed to help you keep some of your life where you can actually see it.</p>
+            <p class="intro-summary">A quiet place to keep track of the life you are already living, without turning it into a productivity score.</p>
 
             <div class="app-points">
               <div><h3>Life Calendar</h3><p>See your life in weeks, months, and years. You choose the life-expectancy frame yourself. It gives the calendar a shape, but Emira does not turn it into a death countdown or tell you how much time you have left.</p></div>
               <div><h3>Eventually + Goals</h3><p>Eventually can hold as many someday ideas as you want. Monthly Goals stay intentionally small: up to three at a time, including zero. Goals can change, go back to Eventually, be completed, or be released without being treated like failures.</p></div>
               <div><h3>Milestones + Journal</h3><p>Milestones keep things that happened and mattered, including ordinary memories, not only achievements. Journal pages can cover one day or a range of days, include photos, connect to Milestones, and be reread in Book View.</p></div>
             </div>
+
+            <details class="intro-details">
+              <summary>What Emira is for</summary>
+              <p>The Life Calendar is the center of Emira. It lets you see your life laid out as time instead of only looking at one day or one month at a time. Around it are places for things you might want to do, things that already happened, things you want to write down, and things you want to leave for yourself later. Planning is part of it, but so is remembering, looking back, changing your mind, or simply opening the app because you like being there.</p>
+            </details>
+
+            <div class="page-breath" aria-hidden="true"></div>
 
             <div class="app-points">
               <div><h3>Time Capsules + Reflection</h3><p>Leave a message or photo for your future self, then let it stay closed until the date you chose. Reflection Reviews are occasional invitations to remember what happened, not checkups on whether you completed enough goals.</p></div>
@@ -444,8 +447,15 @@
             <p class="section-label">Wordleaf</p>
             <h2>Write with your voice.</h2>
             <p class="app-principle"><strong>Writing should be free and accessible.</strong></p>
-            <p>Wordleaf is a writing program built for people who like to talk through their work. You can dictate a paragraph, make a heading, move a picture, change the page layout, sort notes into an outline, or clean up the document without stopping to hunt through menus.</p>
-            <p>You can talk to it normally. It can tell when you are writing, quoting someone, thinking through an idea, or asking it to change the document. You can still type whenever you want, but the whole program is designed so your voice can do most of the work.</p>
+            <p class="intro-summary">Dictate, format, organize, and finish a document without stopping to hunt through menus. Wordleaf is built so your voice can do most of the work, while typing stays available whenever you want it.</p>
+
+            <div class="early-download" aria-label="Wordleaf Windows download">
+              <p class="download-note"><strong>Wordleaf is free for Windows.</strong></p>
+              <div class="writer-downloads">
+                <a class="writer-download" href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe" aria-label="Download Wordleaf — Free for Windows">Download Wordleaf — Free for Windows</a>
+              </div>
+              <p class="release-note">Official Fox &amp; Moss GitHub release. <a href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest">View release details</a>.</p>
+            </div>
 
             <div class="app-points">
               <div><h3>Speak or type</h3><p>Dictate full passages, dialogue, notes, or rough ideas. Wordleaf can clean up obvious speech-to-text mess, add punctuation, keep quoted speech together, and remember spellings or terms you want it to preserve.</p></div>
@@ -453,19 +463,28 @@
               <div><h3>Work with pictures and visuals</h3><p>Add and place pictures, move them around the document, and work with tables, figures, charts, diagrams, timelines, equations, captions, references, and other visual or technical material.</p></div>
             </div>
 
+            <details class="intro-details">
+              <summary>How Wordleaf understands your voice</summary>
+              <p>Wordleaf is built for people who like to talk through their work. It can tell when you are writing, quoting someone, thinking through an idea, or asking it to change the document. It can also clean up the document without silently replacing your meaning.</p>
+            </details>
+
+            <div class="page-breath" aria-hidden="true"></div>
+
             <div class="app-points">
               <div><h3>Organize your outline</h3><p>Bring in your scenes, notes, chapters, or ideas and sort them into structures such as the Hero’s Journey, Story Circle, Save the Cat, or a 27-point structure. Wordleaf can show what fits where, what is missing, and what may work better in a different order.</p></div>
               <div><h3>Essays, research, and nonfiction</h3><p>Organize essays, reports, research papers, theses, literature reviews, citations, references, tables, and figures. It also has guidance for APA, MLA, Chicago/Turabian, IEEE, AMA, and common report formats.</p></div>
               <div><h3>Bring it in, finish it, export it</h3><p>Import Word files, Google Docs exports, plain text, or Markdown. Choose a page format, preview the finished pages as you work, export a PDF, or save the full editable project so you can reopen it later.</p></div>
             </div>
 
+            <div class="page-breath" aria-hidden="true"></div>
+
             <p><strong>Wordleaf is completely free to use.</strong></p>
-            <p class="download-note">Download Wordleaf for desktop. Windows is available now; macOS is being prepared.</p>
+            <p class="download-note">Windows is available now; macOS is being prepared.</p>
             <div class="writer-downloads" aria-label="Wordleaf downloads">
-              <!-- Permanent Wordleaf bootstrap: this small installer reads the public release manifest and fetches the newest verified Windows build. Keep this URL versionless. -->
-              <a class="writer-download" href="https://github.com/FoxandMoss/WordLeaf-releases/raw/main/windows/WordleafSetup.exe" aria-label="Download Wordleaf for Windows">Download for Windows</a>
+              <a class="writer-download" href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe" aria-label="Download Wordleaf — Free for Windows">Download Wordleaf — Free for Windows</a>
               <span class="writer-download writer-download-disabled" aria-disabled="true">Download for Mac <small>Coming soon</small></span>
             </div>
+            <p class="release-note">Windows downloads come from the official <a href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest">Wordleaf GitHub release</a>.</p>
 
 <section class="wordleaf-faq" aria-labelledby="wordleaf-faq-title">
               <p class="section-label">Frequently asked questions</p>
