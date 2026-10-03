@@ -102,7 +102,7 @@
                 <div class="app-download-grid single-platform">
                   <span class="platform-action platform-action-disabled" aria-disabled="true">
                     <strong class="platform-name">iPhone + iPad</strong>
-                    <small class="platform-status">Coming soon to iOS</small>
+                    <small class="platform-status" data-download-label="emira:ios">Coming soon to iOS</small>
                   </span>
                 </div>
               </aside>
@@ -473,13 +473,13 @@
               <aside class="app-download-card" aria-label="Wordleaf downloads">
                 <p class="app-download-card-kicker">Free desktop app</p>
                 <div class="app-download-grid">
-                  <a class="platform-action" href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe" aria-label="Download Wordleaf free for Windows">
+                  <a class="platform-action" data-download-app="wordleaf" data-download-platform="windows" href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe" aria-label="Download Wordleaf free for Windows">
                     <strong class="platform-name">Windows</strong>
-                    <small class="platform-status">Download free</small>
+                    <small class="platform-status" data-download-label="wordleaf:windows">Download free</small>
                   </a>
-                  <span class="platform-action platform-action-disabled" aria-disabled="true">
+                  <span class="platform-action platform-action-disabled" data-download-app="wordleaf" data-download-platform="mac" aria-disabled="true">
                     <strong class="platform-name">Mac</strong>
-                    <small class="platform-status">Coming soon</small>
+                    <small class="platform-status" data-download-label="wordleaf:mac">Coming soon</small>
                   </span>
                 </div>
               </aside>
@@ -509,7 +509,7 @@
             <p><strong>Wordleaf is completely free to use.</strong></p>
             <p class="download-note">Windows is available now; macOS is being prepared.</p>
             <div class="writer-downloads" aria-label="Wordleaf downloads">
-              <a class="writer-download" href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe" aria-label="Download Wordleaf — Free for Windows">Download Wordleaf — Free for Windows</a>
+              <a class="writer-download" data-download-app="wordleaf" data-download-platform="windows" href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe" aria-label="Download Wordleaf — Free for Windows">Download Wordleaf — Free for Windows</a>
               <span class="writer-download writer-download-disabled" aria-disabled="true">Download for Mac <small>Coming soon</small></span>
             </div>
             <p class="release-note">Windows downloads come from the official <a href="https://github.com/FoxandMoss/WordLeaf-releases/releases/latest">Wordleaf GitHub release</a>.</p>
@@ -894,13 +894,13 @@
               <aside class="app-download-card" aria-label="Nalia downloads">
                 <p class="app-download-card-kicker">Desktop app</p>
                 <div class="app-download-grid">
-                  <a class="platform-action" href="https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe" aria-label="Download Nalia for Windows">
+                  <a class="platform-action" data-download-app="nalia" data-download-platform="windows" href="https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe" aria-label="Download Nalia for Windows">
                     <strong class="platform-name">Windows</strong>
-                    <small class="platform-status">Download</small>
+                    <small class="platform-status" data-download-label="nalia:windows">Download</small>
                   </a>
-                  <span class="platform-action platform-action-disabled" aria-disabled="true">
+                  <span class="platform-action platform-action-disabled" data-download-app="nalia" data-download-platform="mac" aria-disabled="true">
                     <strong class="platform-name">Mac</strong>
-                    <small class="platform-status">Coming soon</small>
+                    <small class="platform-status" data-download-label="nalia:mac">Coming soon</small>
                   </span>
                 </div>
               </aside>
@@ -921,7 +921,7 @@
 
             <p class="download-note">Nalia is an experimental Windows project. The Windows installer uses the public release channel so the same download link can continue to fetch the newest build.</p>
             <div class="writer-downloads" aria-label="Nalia downloads">
-              <a class="writer-download" href="https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe" aria-label="Download Nalia for Windows">Download for Windows</a>
+              <a class="writer-download" data-download-app="nalia" data-download-platform="windows" href="https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe" aria-label="Download Nalia for Windows">Download for Windows</a>
               <span class="writer-download writer-download-disabled" aria-disabled="true">Download for Mac <small>Coming soon</small></span>
             </div>
 
@@ -959,13 +959,13 @@
               <aside class="app-download-card" aria-label="Storage Guard downloads">
                 <p class="app-download-card-kicker">Free desktop utility</p>
                 <div class="app-download-grid">
-                  <a class="platform-action" href="./downloads/StorageGuard-Windows-Installer.exe" aria-label="Download Storage Guard free for Windows">
+                  <a class="platform-action" data-download-app="storage-guard" data-download-platform="windows" href="./downloads/StorageGuard-Windows-Installer.exe" aria-label="Download Storage Guard free for Windows">
                     <strong class="platform-name">Windows</strong>
-                    <small class="platform-status">Download free</small>
+                    <small class="platform-status" data-download-label="storage-guard:windows">Download free</small>
                   </a>
-                  <span class="platform-action platform-action-disabled" aria-disabled="true">
+                  <span class="platform-action platform-action-disabled" data-download-app="storage-guard" data-download-platform="mac" aria-disabled="true">
                     <strong class="platform-name">Mac</strong>
-                    <small class="platform-status">Coming soon</small>
+                    <small class="platform-status" data-download-label="storage-guard:mac">Coming soon</small>
                   </span>
                 </div>
               </aside>
@@ -989,7 +989,7 @@
 
             <p class="download-note">Storage Guard is designed to keep inspection local and conservative: read the evidence, check usage, challenge the conclusion, then act only when the final safety gate agrees.</p>
             <div class="writer-downloads" aria-label="Storage Guard downloads">
-              <a class="writer-download" href="./downloads/StorageGuard-Windows-Installer.exe" aria-label="Download Storage Guard free for Windows">Download for Windows</a>
+              <a class="writer-download" data-download-app="storage-guard" data-download-platform="windows" href="./downloads/StorageGuard-Windows-Installer.exe" aria-label="Download Storage Guard free for Windows">Download for Windows</a>
               <span class="writer-download writer-download-disabled" aria-disabled="true">Download for Mac <small>Coming soon</small></span>
             </div>
           </section>
