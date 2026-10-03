@@ -78,3 +78,5 @@ This rule applies across source files, documents, images, proofs, builds, and re
 - Emira: https://foxandmoss.github.io/home/emira/
 - Wordleaf: https://foxandmoss.github.io/home/wordleaf/
 
+Nalia: https://foxandmoss.github.io/home/nalia/
+

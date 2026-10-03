@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Nalia | Hands-Free Context-Aware Computer Assistant</title>
+    <meta name="description" content="Nalia is an accessibility-first Windows computer assistant with continuous local dictation, screen context, user adaptation, and hands-free computer control.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Fox & Moss">
+    <link rel="canonical" href="https://foxandmoss.github.io/home/nalia/">
+    <meta property="og:site_name" content="Fox & Moss">
+    <meta property="og:title" content="Nalia | Hands-Free Context-Aware Computer Assistant">
+    <meta property="og:description" content="Continuous local dictation, adaptive speech timing, screen context, and hands-free Windows computer control.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://foxandmoss.github.io/home/nalia/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nalia | Hands-Free Context-Aware Computer Assistant">
+    <meta name="twitter:description" content="Accessibility-first hands-free Windows computer use with continuous local dictation and screen context.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&amp;display=swap" rel="stylesheet">
+    <link href="../style.css?v=20261003-nalia" rel="stylesheet">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Fox & Moss",
+      "url": "https://foxandmoss.github.io/home/",
+      "sameAs": ["https://github.com/FoxandMoss"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Nalia",
+      "url": "https://foxandmoss.github.io/home/nalia/",
+      "applicationCategory": "AccessibilityApplication",
+      "operatingSystem": "Windows",
+      "description": "An accessibility-first hands-free computer assistant with continuous local dictation, adaptive user context, screen observation, and bounded computer control.",
+      "author": {"@type": "Organization", "name": "Fox & Moss"}
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <p class="eyebrow">Fox &amp; Moss</p>
+      <h1>Things made with care.</h1>
+      <nav aria-label="Main navigation">
+        <ul class="main-menu">
+          <li><a href="../">Home</a></li>
+          <li><a href="../emira/">Emira</a></li>
+          <li><a href="../wordleaf/">Wordleaf</a></li>
+          <li><a href="./" class="active">Nalia</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="container">
+      <div class="inner">
+        <div id="content">
+          <section id="nalia">
+            <p class="section-label">Nalia</p>
+            <h2>Use your computer without fighting the interface.</h2>
+            <p class="app-principle"><strong>Speak naturally. Nalia handles the computer.</strong></p>
+            <p>Nalia stands for <strong>Natural Adaptive Language Interface Assistant</strong>. It is an experimental Windows computer assistant designed around continuous hands-free interaction instead of a wake word, push-to-talk button, or command box.</p>
+            <p>It combines local speech transcription, individual speech and timing adaptation, current-screen context, and bounded computer actions so the computer can respond to ordinary instructions in context.</p>
+
+            <div class="app-points">
+              <div><h3>Always listening</h3><p>After setup, dictation stays available in the background and recovery should not depend on the user reaching a button.</p></div>
+              <div><h3>Adapts to the user</h3><p>Explicit timing needs, interaction preferences, and commonly misheard words can be kept locally so Nalia gets better at understanding the individual user.</p></div>
+              <div><h3>Current context</h3><p>Nalia combines the current screen, active window, installed applications, and recent task context rather than relying on a rigid list of voice commands.</p></div>
+            </div>
+
+            <div class="app-points">
+              <div><h3>Accessibility first</h3><p>It is designed around the possibility that a user cannot reliably fall back to a mouse, keyboard, touchscreen, or visual recovery prompt.</p></div>
+              <div><h3>Local first</h3><p>The normal speech, screen, adaptation, and action-routing path is designed to stay on the computer.</p></div>
+              <div><h3>No chat to manage</h3><p>Nalia does not need a personality or conversation history. The visible app is for setup and health; the normal result is the requested computer action.</p></div>
+            </div>
+
+            <p class="download-note">Nalia is experimental. The permanent Windows installer checks the public release channel for the newest available build.</p>
+            <div class="writer-downloads" aria-label="Nalia downloads">
+              <a class="writer-download" href="https://github.com/FoxandMoss/Nalia-releases/raw/main/windows/NaliaSetup.exe">Download for Windows</a>
+            </div>
+
+            <section class="wordleaf-faq" aria-labelledby="nalia-faq-title">
+              <p class="section-label">Frequently asked questions</p>
+              <h2 id="nalia-faq-title">How does Nalia work?</h2>
+              <details class="policy-item faq-group">
+                <summary>Voice and accessibility</summary>
+                <div class="faq-group-body">
+                  <details class="policy-item faq-item"><summary>Do I need a wake word or push-to-talk button?</summary><p>No. The intended interaction is continuous dictation after setup.</p></details>
+                  <details class="policy-item faq-item"><summary>Can it adapt to pauses, stuttering, a lisp, slurred speech, or other speech differences?</summary><p>Nalia can adapt its interaction timing and keep explicit local corrections for repeated transcription errors. It is designed to adapt to functional needs without diagnosing someone from their voice.</p></details>
+                  <details class="policy-item faq-item"><summary>Is Nalia only for disabled users?</summary><p>No. Accessibility is a core design requirement, but anyone can use a hands-free computer interface.</p></details>
+                </div>
+              </details>
+              <details class="policy-item faq-group">
+                <summary>Privacy and limits</summary>
+                <div class="faq-group-body">
+                  <details class="policy-item faq-item"><summary>Is the normal AI processing local?</summary><p>Yes. The normal architecture is designed around local speech transcription, local action interpretation, local user adaptation, and local screen observations.</p></details>
+                  <details class="policy-item faq-item"><summary>Can it control Windows before login or through secure UAC screens?</summary><p>No. Those are Windows security boundaries for the current user-session architecture.</p></details>
+                  <details class="policy-item faq-item"><summary>Is it finished?</summary><p>No. Nalia is an active experimental project and Windows behavior is still being physically verified.</p></details>
+                </div>
+              </details>
+            </section>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <p><a href="../">Fox &amp; Moss</a></p>
+    </footer>
+    <script src="../page.js?v=20261003-nalia"></script>
+  </body>
+</html>
