@@ -349,3 +349,17 @@ ul.main-menu li a.active {
 .faq-item > summary::after { content: "›"; font-size: 2.2rem; line-height: 1; transform: rotate(0deg); transition: transform .16s ease; }
 .faq-item[open] > summary::after { content: "›"; transform: rotate(90deg); }
 .faq-item p { padding-top: .4rem; }
+
+
+.faq-item > summary::after {
+  content: "›";
+  font-size: 2.2rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform .15s ease;
+}
+
+.faq-item[open] > summary::after {
+  content: "›";
+  transform: rotate(90deg);
+}
