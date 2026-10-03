@@ -354,16 +354,6 @@ ul.main-menu li a.active {
 .writer-download small { font-size: 1.15rem; opacity: .72; }
 .writer-download-disabled { color: rgba(255, 248, 237, .48); border-color: rgba(255, 248, 237, .28); cursor: not-allowed; user-select: none; }
 
-.wordleaf-principle {
-  color: #ffe6d4;
-  letter-spacing: .035em;
-  line-height: 1.82;
-}
-
-.wordleaf-principle strong {
-  font-weight: 400;
-}
-
 .wordleaf-faq { margin-top: 3.5rem; }
 .wordleaf-faq > h2 { margin-bottom: 1.2rem; }
 .faq-item { margin: 1rem 0; }
@@ -420,20 +410,19 @@ ul.main-menu li a.active {
 }
 
 
-/* Alice ships as a single regular face. Avoid browser-synthesized bold/semibold
-   so text stays crisp; hierarchy comes from size, spacing, and color instead. */
+
+
+/* Alice has one true weight. Keep emphasis text on the same real face and
+   body metrics instead of letting browsers synthesize heavier text. */
 strong,
 b {
-  font-weight: 400;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
 }
 
 .wordleaf-principle {
-  font-size: 1.95rem;
   color: #ffe6d4;
-  letter-spacing: .015em;
-  line-height: 1.78;
-}
-
-.wordleaf-principle strong {
-  font-weight: 400;
 }
