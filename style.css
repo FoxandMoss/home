@@ -341,3 +341,11 @@ ul.main-menu li a.active {
 .writer-download:hover, .writer-download:focus { text-decoration: underline; }
 .writer-download small { font-size: 1.15rem; opacity: .72; }
 .writer-download-disabled { color: rgba(255, 248, 237, .48); border-color: rgba(255, 248, 237, .28); cursor: not-allowed; user-select: none; }
+
+.wordleaf-faq { margin-top: 3.5rem; }
+.wordleaf-faq > h2 { margin-bottom: 1.2rem; }
+.faq-item { margin: 1rem 0; }
+.faq-item > summary { font-size: 1.65rem; }
+.faq-item > summary::after { content: "›"; font-size: 2.2rem; line-height: 1; transform: rotate(0deg); transition: transform .16s ease; }
+.faq-item[open] > summary::after { content: "›"; transform: rotate(90deg); }
+.faq-item p { padding-top: .4rem; }
