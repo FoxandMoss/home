@@ -36,7 +36,7 @@ body {
   position: relative;
   z-index: 1;
   color: #fff8ed;
-  font: 400 1.7rem/1.7 "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font: 400 1.7rem/1.7 "Alice", Georgia, serif;
 }
 
 /* Landscape uses the original wide illustration, also in full. */
