@@ -974,10 +974,20 @@
             <div class="app-points">
               <div><h3>Guard each drive</h3><p>Choose how much free space a drive should keep and, when useful, which other local drive should be suggested for large data.</p></div>
               <div><h3>See what is actually inside</h3><p>Drill into folders sorted by size and see both storage used and the number of files and folders inside them.</p></div>
-              <div><h3>Clean carefully</h3><p>Temporary files, old installers, portable test copies, and rebuildable developer output can be handled separately from protected Windows data and personal files.</p></div>
+              <div><h3>Clean carefully</h3><p>Storage Guard separates disposable or rebuildable data from projects, documents, art, photos, saves, source code, databases, and anything else that may be user-created.</p></div>
             </div>
 
-            <p class="download-note">Storage Guard runs locally and does not bundle an AI model or a browser engine.</p>
+            <details class="intro-details">
+              <summary>How Storage Guard decides what it can touch</summary>
+              <p><strong>It starts by reading, not guessing.</strong> Storage Guard can inspect the actual local file contents, headers, manifests, folder structure, timestamps, and application metadata instead of deciding from a filename alone.</p>
+              <p><strong>Then it checks what is using the data.</strong> Before cleanup, Storage Guard asks Windows which applications or services currently have relevant files in use. Active data is a reason to keep it, not something to clean underneath a running program.</p>
+              <p><strong>Safe does not automatically mean useful to delete.</strong> A browser cache may be disposable but still useful if that browser is used every day. Storage Guard also considers whether the owning app or data appears stale, whether the drive is actually under pressure, and whether cleaning it would meaningfully restore the configured guard.</p>
+              <p><strong>Online cleanup knowledge is a soft authority.</strong> Vetted public cleanup definitions such as Winapp2 or BleachBit can strengthen the evidence that a particular cache, log, installer remnant, or other target is normally disposable. They never override Storage Guard's protected-data rules and never become permission by themselves.</p>
+              <p><strong>Uncertain cases get challenged from both sides.</strong> Storage Guard uses separate Cleaner, Preserver, and Verifier review passes. The Cleaner builds the strongest evidence-based case for cleanup. The Preserver looks for user data, active application state, project material, or anything difficult to reproduce. The Verifier checks both against hard evidence and has the final veto.</p>
+              <p><strong>The final rule is fail-closed.</strong> Projects, documents, artwork, photos, video, music, source repositories, game saves, databases, archives, and unknown data are never automatically deleted. If Storage Guard cannot prove that something is transient or reproducible, it keeps it or asks. AI or classifier confidence can help investigate an uncertain item, but it cannot grant deletion permission.</p>
+            </details>
+
+            <p class="download-note">Storage Guard is designed to keep inspection local and conservative: read the evidence, check usage, challenge the conclusion, then act only when the final safety gate agrees.</p>
             <div class="writer-downloads" aria-label="Storage Guard downloads">
               <a class="writer-download" href="./downloads/StorageGuard-Windows-Installer.exe" aria-label="Download Storage Guard free for Windows">Download for Windows</a>
               <span class="writer-download writer-download-disabled" aria-disabled="true">Download for Mac <small>Coming soon</small></span>
