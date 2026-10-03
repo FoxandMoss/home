@@ -7,11 +7,18 @@ Saved from live front-end review on 2026-10-03.
 - Do not modernize the site into a generic startup/landing-page style.
 
 ## Actionable now
-- [ ] **Fix mobile responsiveness first.** On phone-width rendering, the header, headlines, body copy, and feature cards overflow off the right side. The page must fit the viewport without horizontal clipping.
-- [ ] **Reduce prose before visual payoff.** Keep the ideas and tone, but make the first screen(s) easier to skim. Let feature names and short summaries do more of the early work; move longer explanation lower or behind expandable sections where appropriate.
-- [ ] **Move Wordleaf's Windows download action earlier.** Put a clear "Download Wordleaf — Free for Windows" action near the opening "Write with your voice" section. Keep the later download section too.
-- [ ] **Improve the Wordleaf download path.** Replace the direct raw-GitHub installer link with a proper release/download flow (prefer the project's GitHub Releases asset or another stable release URL) so the user-facing download feels intentional and is less likely to look suspicious/janky.
-- [ ] **Break up the long solid-brown content area.** Preserve the visual identity, but let more paper/background breathe through between sections so the product pages do not read as one tall brown rectangle.
+- [x] **Fix mobile responsiveness first.** On phone-width rendering, the header, headlines, body copy, and feature cards overflow off the right side. The page must fit the viewport without horizontal clipping.
+- [x] **Reduce prose before visual payoff.** Keep the ideas and tone, but make the first screen(s) easier to skim. Let feature names and short summaries do more of the early work; move longer explanation lower or behind expandable sections where appropriate.
+- [x] **Move Wordleaf's Windows download action earlier.** Put a clear "Download Wordleaf — Free for Windows" action near the opening "Write with your voice" section. Keep the later download section too.
+- [x] **Improve the Wordleaf download path.** Replace the direct raw-GitHub installer link with a proper release/download flow (prefer the project's GitHub Releases asset or another stable release URL) so the user-facing download feels intentional and is less likely to look suspicious/janky.
+- [x] **Break up the long solid-brown content area.** Preserve the visual identity, but let more paper/background breathe through between sections so the product pages do not read as one tall brown rectangle.
+
+### Completed 2026-10-03
+- Live source and browser checks confirmed the updated shared stylesheet is deployed.
+- Mobile checks at 390px wide showed no horizontal page overflow on Home, Emira, Wordleaf, or Nalia.
+- Desktop checks retained the existing 760px paper-panel layout without horizontal overflow.
+- Wordleaf now uses the official GitHub Releases download asset near the opening and in the later download section.
+- Product screenshots remain intentionally deferred.
 
 ## Deferred until the apps are actually ready/released
 - [ ] **Add real product screenshots and images.** Do not add fake/mock product images just to fill space. Once Emira/Wordleaf are ready enough to show, add real screenshots early on each product page to break up prose and show the actual product.
