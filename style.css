@@ -335,6 +335,9 @@ ul.main-menu li a.active {
   }
 }
 
+.download-note { margin-bottom: 1.2rem; }
 .writer-downloads { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-.writer-download { display: inline-block; padding: 10px 16px; border: 1px solid currentColor; border-radius: 8px; text-decoration: none; }
+.writer-download { display: inline-flex; align-items: center; gap: .7rem; padding: 10px 16px; border: 1px solid currentColor; border-radius: 8px; text-decoration: none; }
 .writer-download:hover, .writer-download:focus { text-decoration: underline; }
+.writer-download small { font-size: 1.15rem; opacity: .72; }
+.writer-download-disabled { color: rgba(255, 248, 237, .48); border-color: rgba(255, 248, 237, .28); cursor: not-allowed; user-select: none; }
