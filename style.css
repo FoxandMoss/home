@@ -628,3 +628,119 @@ canvas {
     font-size: 1.72rem;
   }
 }
+
+
+/* Shared compact app hero + download block */
+.app-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 16rem);
+  gap: 2.2rem;
+  align-items: start;
+  margin-bottom: 2.8rem;
+}
+
+.app-hero-copy {
+  min-width: 0;
+}
+
+.app-hero-copy .intro-summary {
+  margin-bottom: 0;
+}
+
+.app-download-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(255, 242, 220, .08);
+  border: 1px solid rgba(255, 243, 222, .28);
+  border-radius: 14px;
+}
+
+.app-download-card-kicker {
+  margin: 0;
+  padding: .9rem 1rem;
+  color: rgba(255, 248, 237, .68);
+  font-size: 1.15rem;
+  line-height: 1.25;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 243, 222, .18);
+}
+
+.app-download-grid {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.platform-action {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  padding: 1rem;
+  color: #fff8ed;
+  text-align: center;
+  text-decoration: none;
+}
+
+.platform-action + .platform-action {
+  border-top: 1px solid rgba(255, 243, 222, .18);
+}
+
+a.platform-action:hover,
+a.platform-action:focus {
+  background: rgba(255, 242, 220, .08);
+  text-decoration: none;
+}
+
+.platform-name {
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.platform-status {
+  color: rgba(255, 248, 237, .72);
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.platform-action-disabled {
+  color: rgba(255, 248, 237, .5);
+  cursor: default;
+  user-select: none;
+}
+
+.single-platform .platform-action {
+  border-top: 0;
+}
+
+.app-status-card .platform-action {
+  background: rgba(255, 242, 220, .035);
+}
+
+
+@media (max-width: 680px) {
+  .app-hero {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .app-download-card {
+    max-width: none;
+    aspect-ratio: auto;
+  }
+
+  .app-download-grid {
+    min-height: 9.5rem;
+  }
+
+  .platform-action {
+    min-height: 4.75rem;
+  }
+}
