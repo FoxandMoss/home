@@ -1,0 +1,51 @@
+{
+  "wordleaf": {
+    "windows": {
+      "status": "available",
+      "url": "https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe",
+      "label": "Download free"
+    },
+    "mac": {
+      "status": "coming_soon",
+      "label": "Coming soon"
+    }
+  },
+  "nalia": {
+    "windows": {
+      "status": "available",
+      "url": "https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe",
+      "label": "Download"
+    },
+    "mac": {
+      "status": "coming_soon",
+      "label": "Coming soon"
+    }
+  },
+  "storage-guard": {
+    "windows": {
+      "status": "available",
+      "url": "./downloads/StorageGuard-Windows-Installer.exe",
+      "label": "Download free"
+    },
+    "mac": {
+      "status": "coming_soon",
+      "label": "Coming soon"
+    }
+  },
+  "emira": {
+    "ios": {
+      "status": "coming_soon",
+      "label": "Coming soon to iOS"
+    }
+  },
+  "aubrey": {
+    "ios": {
+      "status": "coming_soon",
+      "label": "Coming soon"
+    },
+    "steam": {
+      "status": "coming_soon",
+      "label": "Coming soon"
+    }
+  }
+}
