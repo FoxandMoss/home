@@ -80,3 +80,8 @@ This rule applies across source files, documents, images, proofs, builds, and re
 
 Nalia: https://foxandmoss.github.io/home/nalia/
 
+
+
+## Shared Windows installer rule
+
+All Fox & Moss Windows desktop installers must follow [INSTALLER-CONTRACT.md](INSTALLER-CONTRACT.md). This includes stable versionless download URLs, pre-install release checks, radio-button drive choice, and a hardware/free-space-based Recommended drive.
