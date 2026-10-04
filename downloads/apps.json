@@ -2,7 +2,7 @@
   "wordleaf": {
     "windows": {
       "status": "coming_soon",
-      "label": "Temporarily unavailable \u2014 corrected installer pending"
+      "label": "Temporarily unavailable — corrected installer pending"
     },
     "mac": {
       "status": "coming_soon",
@@ -11,8 +11,9 @@
   },
   "nalia": {
     "windows": {
-      "status": "coming_soon",
-      "label": "Temporarily unavailable \u2014 corrected installer pending"
+      "status": "available",
+      "url": "https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe",
+      "label": "Download"
     },
     "mac": {
       "status": "coming_soon",
