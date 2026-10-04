@@ -72,7 +72,7 @@ jobs:
               else:
                   apps[app]["windows"] = {
                       "status": "coming_soon",
-                      "label": "Updated installer publishing",
+                      "label": "Temporarily unavailable — corrected installer pending",
                   }
                   print(f"{app}: kept disabled; verified replacement not ready")
 
