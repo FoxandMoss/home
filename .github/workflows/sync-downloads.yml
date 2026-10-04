@@ -2,7 +2,7 @@ name: Sync verified desktop downloads
 
 on:
   schedule:
-    - cron: "17,47 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
   push:
     branches: [gh-pages]
