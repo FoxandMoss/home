@@ -1,14 +1,14 @@
 {
   "wordleaf": {
     "repo": "FoxandMoss/WordLeaf-releases",
-    "minimumVersion": "0.2.5",
+    "minimumVersion": "0.2.6",
     "asset": "Wordleaf-Windows-Installer.exe",
     "url": "https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe",
     "label": "Download free"
   },
   "nalia": {
     "repo": "FoxandMoss/Nalia-releases",
-    "minimumVersion": "0.1.1",
+    "minimumVersion": "0.1.2",
     "asset": "Nalia-Windows-Installer.exe",
     "url": "https://github.com/FoxandMoss/Nalia-releases/releases/latest/download/Nalia-Windows-Installer.exe",
     "label": "Download"
