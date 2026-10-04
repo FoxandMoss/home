@@ -1,8 +1,9 @@
 {
   "wordleaf": {
     "windows": {
-      "status": "coming_soon",
-      "label": "Temporarily unavailable — corrected installer pending"
+      "status": "available",
+      "url": "https://github.com/FoxandMoss/WordLeaf-releases/releases/latest/download/Wordleaf-Windows-Installer.exe",
+      "label": "Download free"
     },
     "mac": {
       "status": "coming_soon",
