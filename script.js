@@ -1,5 +1,6 @@
 (function ($) {
   var framePending = false;
+  var unpublishedRegions = ['#wordleaf', '#nalia', '#storage-guard'];
 
   // Map page scroll progress directly to artwork progress.
   // Page top = artwork top. Page bottom = artwork bottom.
@@ -74,10 +75,53 @@
       });
   }
 
+  // Wordleaf, Nalia, and Storage Guard are intentionally kept in the source
+  // while unpublished. Emira is the only app exposed by the public site.
+  function applyEmiraOnlyPublicView() {
+    unpublishedRegions.forEach(function (region) {
+      $('.main-menu a[href="' + region + '"]').closest('li').hide();
+      $(region).attr('aria-hidden', 'true');
+    });
+
+    $('#home .app-points > div').filter(function () {
+      var name = $(this).find('h3').first().text().trim();
+      return name === 'Wordleaf' || name === 'Nalia' || name === 'Storage Guard';
+    }).hide();
+
+    $('#home .home-intro p').filter(function () {
+      return $(this).text().trim().indexOf('Fox & Moss is home to') === 0;
+    }).text('Fox & Moss is home to Emira, a calm life calendar for goals, memories, journaling, reflection, time capsules, and little relaxing games.');
+
+    document.title = 'Fox & Moss | Emira';
+
+    var description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.setAttribute('content', 'Fox & Moss makes Emira, a calm native iPhone and iPad life calendar for goals, memories, journaling, reflection, time capsules, and relaxing games.');
+    }
+
+    var openGraphDescription = document.querySelector('meta[property="og:description"]');
+    if (openGraphDescription) {
+      openGraphDescription.setAttribute('content', 'Emira is a calm native iPhone and iPad life calendar for goals, memories, journaling, reflection, time capsules, and relaxing games.');
+    }
+
+    var twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) {
+      twitterDescription.setAttribute('content', 'Fox & Moss makes Emira, a calm native iPhone and iPad life calendar.');
+    }
+  }
+
   function showRegion() {
     $('.content-region').hide();
     $('.main-menu a').removeClass('active');
-    var region = location.hash.toString() || $('.main-menu a:first').attr('href');
+    var region = location.hash.toString() || $('.main-menu a:visible:first').attr('href');
+
+    if (unpublishedRegions.indexOf(region) !== -1) {
+      region = '#emira';
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '#emira');
+      }
+    }
+
     $(region).show();
     $('.main-menu a[href="' + region + '"]').addClass('active');
   }
@@ -106,6 +150,7 @@
   });
 
   $(function () {
+    applyEmiraOnlyPublicView();
     refreshDownloadManifest();
     showRegion();
     scheduleArtworkPosition();
