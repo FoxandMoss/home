@@ -55,12 +55,20 @@ Do not read every owner on every task. Use START HERE + the active Working to se
 - `script.js`: homepage hash routing, dynamic behavior and download-manifest application. Do not use runtime hiding as a substitute for correcting canonical HTML when public/no-JS/SEO truth must change.
 - `style.css`: shared root-page visual system, responsive behavior, focus/motion/layout.
 - `page.js`: dedicated product-page shared behavior where used.
-- `robots.txt`: crawler policy; pair with sitemap/canonical work.
-- `downloads/apps.json` and related download assets/status data: public release/status wiring where applicable.
-- `emira/`: canonical Emira product/support page surface where present.
-- `wordleaf/`, `nalia/`, and Storage Guard source: preserved unpublished/conditional surfaces. Before restoring, read current product owners and verify claims/downloads.
+- `emira/index.html`: dedicated Emira product page.
+- `wordleaf/index.html`: preserved Wordleaf page; unpublished by current direction until explicitly restored.
+- `nalia/index.html`: preserved Nalia page; unpublished by current direction until explicitly restored.
+- `sitemap.xml`: crawler route inventory; must agree with current intended public/canonical routes.
+- `robots.txt`: crawler policy and sitemap pointer; pair with sitemap/canonical work.
+- `downloads/apps.json`: shared platform availability/status manifest. Release availability does **not** itself authorize website visibility.
+- `downloads/release-policy.json`: verified-release sync policy for desktop products.
+- `downloads/StorageGuard-Windows-Installer.exe` and `downloads/storage-guard-latest.json`: Storage Guard public download/update artifacts currently stored in this repository.
+- `.github/workflows/sync-downloads.yml`: release-check/sync automation that can update `downloads/apps.json` and commit the manifest back to `gh-pages`.
+- `.github/workflows/verify-downloads.yml`: manifest/endpoint/page-wiring validator. Audit it whenever public product visibility or download markup changes.
+- `testfile.html`: stale public test artifact containing only `testing the text.`; no current product/source-owner purpose identified. Do not treat it as a canonical public route.
+- background/avatar/botanical image assets: current visual assets. Asset filenames containing the older `fox-and-moss` form are migration/history, not by themselves naming authority.
 
-If later Workings introduce a generated/shared shell, sitemap, 404, CNAME, CI, or other canonical owner, add it here and to START HERE as appropriate.
+If later Workings introduce a generated/shared shell, 404, CNAME, CI, or other canonical owner, add it here and to START HERE as appropriate.
 
 ## Current public direction
 
@@ -75,7 +83,7 @@ Current user direction is:
 
 The source still contains older `Fox & Moss` naming and hidden product copy. That is migration debt, not evidence that the current direction changed.
 
-## Known baseline issue captured by WEB-001
+## Known baseline issues captured by WEB-001
 
 Commit `4072c96154e7c2edf2655653ab1714a40cc79929` implemented Emira-only presentation mainly in `script.js`. Static `index.html` still contains/advertises the other products and old metadata.
 
@@ -86,7 +94,14 @@ Therefore:
 - dynamic `document.title`/meta replacement is not canonical source cleanup;
 - WEB-001 records this as an observed source/authority conflict to route into the proper implementation Working.
 
-Do not cite the JS patch alone as proof that homepage canonicalization, metadata, accessibility, or no-JS acceptance is complete.
+Additional current integration drift found during WEB-001:
+
+- `sitemap.xml` still lists `/wordleaf/` and `/nalia/`, so crawler-visible route truth does not yet match the Emira-only public direction.
+- `.github/workflows/verify-downloads.yml` currently requires Wordleaf, Nalia, and Storage Guard `data-download-app` markers in `index.html`. A canonical HTML cleanup must update the validator in the same audit rather than preserving stale HTML to satisfy stale CI.
+- `downloads/apps.json` still marks Wordleaf, Nalia, and Storage Guard Windows builds as available. That may be valid release truth while the products are intentionally unpublished from the studio site; do not conflate release availability with visibility.
+- `testfile.html` remains in the public Pages tree with no identified canonical purpose.
+
+Do not cite the JS patch alone as proof that homepage canonicalization, metadata, accessibility, crawler visibility, or no-JS acceptance is complete.
 
 ## Read triggers by change class
 
@@ -94,7 +109,7 @@ Do not cite the JS patch alone as proof that homepage canonicalization, metadata
 Read START HERE, Queue, ACTIVE Working, Website Master Plan, `AGENTS.md`, current `index.html` metadata/header/footer/structured data, relevant dedicated product pages, and current official GitHub Pages docs before external DNS/Pages changes.
 
 ### Navigation / product visibility
-Read START HERE, Queue, ACTIVE Working, `index.html`, `script.js`, shared navigation/product pages, and the product owner for any product being restored.
+Read START HERE, Queue, ACTIVE Working, `index.html`, `script.js`, `sitemap.xml`, shared navigation/product pages, and the product owner for any product being restored. Also inspect `verify-downloads.yml` if root product/download markers change.
 
 ### Emira marketing / privacy / pricing / subscription
 Read Emira public-copy owner; add current Emira publication/subscription authority for price/trial/privacy/publication claims. Verify changing factual claims against current product/release truth.
@@ -103,7 +118,10 @@ Read Emira public-copy owner; add current Emira publication/subscription authori
 Read Website Master Plan accessibility owner + current HTML/CSS/JS + ACTIVE Working + actual validation. Preserve no-JS and reduced-motion requirements where applicable.
 
 ### Downloads / installers
-Read `INSTALLER-CONTRACT.md`, current product release truth, download manifest/source, and product handoff as applicable.
+Read `INSTALLER-CONTRACT.md`, `downloads/apps.json`, `downloads/release-policy.json`, both download workflows, current product release truth, and product handoff as applicable.
+
+### Metadata / crawler visibility
+Read `index.html`, dedicated product pages, `sitemap.xml`, `robots.txt`, current canonical-domain state, ACTIVE Working, and Website Master Plan. Hidden UI alone is not crawler/canonical cleanup.
 
 ### Audit
 Read `AGENTS.md`, Global Programming Audit Contract, ACTIVE Working, fresh head, affected source, and relevant owners. Execute repair/re-validation loop; unavailable checks are not PASS.
