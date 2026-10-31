@@ -1,4 +1,28 @@
-# Simple Website Using Github Pages
+# Foxmoss Website Repository
+
+## Current authority — read before editing
+
+This repository's inherited GitHub Pages template notes are preserved below as historical orientation, but they are **not** the current top authority for Foxmoss website work.
+
+Before a substantive edit, audit, deployment/domain change, or public-copy change, read:
+
+1. [AGENTS.md](AGENTS.md) — repository execution/read rules.
+2. [WEBSITE-AUTHORITY.md](WEBSITE-AUTHORITY.md) — Git ↔ Google Drive authority/source map.
+3. [Drive START HERE — Foxmoss Website Authority Map + Read Routing](https://docs.google.com/document/d/13Tl_Drg-jjCB6U0d7gu7GSnW-ESKFcU00Deqb4WoldM/edit).
+4. [Drive Website Working Queue](https://docs.google.com/document/d/1TsfOy_EkQIcsYBgJ_Nj-Mxj8_n8KzvfDfuldcSiOLvY/edit).
+5. The ACTIVE Website Working named by that queue, then only the source owners relevant to the requested change.
+
+The current public direction is **Emira only**. Wordleaf, Nalia, and Storage Guard source is preserved but unpublished until explicitly restored. Current identity direction is **Foxmoss Studio**, with **Foxmoss** as the compact mark/name and `foxmoss.studio` as the intended canonical domain; the production rename/domain cutover is not claimed complete merely because this README records the direction.
+
+Current source must be read fresh before implementation. Do not treat any hash or older Working as a permanent selector.
+
+---
+
+# Historical template orientation
+
+The material below originated from the simple GitHub Pages template and remains useful only where it does not conflict with the current authorities above.
+
+## Simple Website Using Github Pages
 Make a simple HTML website and publish it using Github Pages.  
 View example: https://cplmakerlab.github.io/simple-website-template/
 
@@ -11,6 +35,8 @@ View example: https://cplmakerlab.github.io/simple-website-template/
 
 ## How does this work?
 This website template uses CSS & JS to hide and show different parts of index.html and uses Github Pages to render the website from the gh-pages branch.
+
+For current Foxmoss architecture and the limits of JavaScript-only hiding, use [AGENTS.md](AGENTS.md), [WEBSITE-AUTHORITY.md](WEBSITE-AUTHORITY.md), and the active Drive Working rather than assuming this inherited template architecture remains the final design.
 
 ## Things to try
 - Edit index.html and change the title of the page (both ```<title>``` in the header and ```<h1>``` in the body)
@@ -26,7 +52,7 @@ Element | Tag | Example usage
 --- | --- | ---
 Header | h1 | ```<h1>Title of page</h1>```
 Link | a | ```<a href="http://example.com">Check out this link</a>```
-Image | img | ```<img src="http://www.example.com/image.jpg">```
+Image | img | ```<img src="http://example.com/image.jpg">```
 Paragraph | p | ```<p>This is a new paragraph.</p>```
 Line break | br | ```This is the first line of a poem. <br> This second line will appear below the first. ```
 
@@ -36,52 +62,44 @@ Line break | br | ```This is the first line of a poem. <br> This second line wil
 Check out Mozilla Developers Network (https://developer.mozilla.org). They have lots of good resources, tips, and tutorials to further your knowledge.
 
 ### Can I configure a custom domain for my site, i.e. johnnymakerportfolio.com?
-Yes! Github Pages supports [custom domain configuration](https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site). However, you will need to buy a domain name from a registrar such as [NameCheap](https://www.namecheap.com/) or [Gandi](https://www.gandi.net/) -- the cost is usually around $10 - $15 a year.
+Yes. For this project, however, follow the current Drive Website Working Queue + Website Master Plan + current official GitHub Pages documentation. Do not add a guessed CNAME or DNS values from this inherited template text.
 
 ### Can I add tracking?
-Yes! You can embed Google Analytics to see who is visiting your site.
+Technically yes, but Foxmoss website privacy/analytics decisions belong to the current Website Master Plan/Working. Do not add analytics merely because the old template suggests it.
 
 ### Can I add a blog, etc?
-Not really. This template works best for simple sites. For a simple blog check out [Jekyll, which is a static site generator that also works on Github pages](https://help.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll). For more functionality, you will probably need a content management system (CMS) such as [Wordpress](https://wordpress.com), [Drupal](http://drupal.org), or [Django](https://www.djangoproject.com). A CMS will require additional setup and a website host, such as [Dreamhost](https://www.dreamhost.com/). 
+The current Foxmoss roadmap deliberately keeps the site small/static and defers any Jekyll/blog decision to its dedicated Website Working. Do not add a CMS or build framework from this inherited suggestion alone.
 
 ### Can I sell products or add a store?
-Not easily, but if you are determined you can add Paypal buttons or something like [SnipCart](https://snipcart.com/). If you are interested in selling many products online or need a full store, check out Woocommerce, BigCartel, Shopify, or Etsy.
+Payment/support architecture belongs to the dedicated Website Working and must keep sensitive payment handling on an appropriate hosted provider. Do not implement a store from this template note alone.
 
 ### Can I make separate HTML files for each page?
-Yes, you can use Javascript AJAX calls to pull in external content into your index.html page. See script.js for more details.
+Yes. Current product-page/canonicalization decisions are owned by the Website Master Plan and active Working, not by the old template's AJAX suggestion.
 
 ### I heard I need to be using XYZ framework (Bootstrap, React, etc).
-Web technology changes rapidly, and it easy to get lost in the hype. Learning the basics of HTML, CSS, and JS is a good place to start. From there, you can explore different frameworks and libraries to see what interests you.
+The current Website Master Plan explicitly favors the simplest architecture that meets the requirements. Do not adopt a framework solely because it is popular.
 
 ### I don't want to write code or deal with website hosting. Are there any website builders you recommend?
-- Google Sites (free)
-- Squarespace
-- Wix
-- Strikingly (free tier includes single product store)
-- Big Cartel, Shopify, Etsy (e-commerce)
+This project currently uses GitHub Pages. Changing hosting/platform belongs to an explicit Website Working.
 
 ## Universal file-inspection rule
 
-When work requires examining a file that lives in the user's Google Drive, use this working path:
+When work requires examining a file that lives in the user's Google Drive, use the connected Drive source directly when available and follow the current authority/read-routing contract in [AGENTS.md](AGENTS.md) and the Drive START HERE document. Historical file-transfer/workspace instructions do not override current connector/tool capabilities or the owning Website Working.
 
-**Google Drive → GitHub workspace → AI inspection → GitHub workspace → Google Drive.**
-
-Do not treat GitHub's ability to access a Drive file as equivalent to having inspected it. Pull a working copy into the GitHub Actions workspace for inspection and processing, without permanently committing source files merely for inspection. Use the inspection results in the work, then return finished review outputs to the user's Google Drive when appropriate.
-
-The configured Google Drive root is recursively searchable. Relevant files may be inside any subfolder beneath that root and must be discovered there rather than requiring manual file-by-file instructions.
-
-This rule applies across source files, documents, images, proofs, builds, and review materials, and remains in force unless the user explicitly changes it.
+The configured Google Drive root is searchable. Relevant files may be inside subfolders and should be discovered rather than requiring manual file-by-file instructions.
 
 ## Public site
 
-- Fox & Moss: https://foxandmoss.github.io/home/
+Current intended public product surface:
+
+- Site: https://foxandmoss.github.io/home/
 - Emira: https://foxandmoss.github.io/home/emira/
-- Wordleaf: https://foxandmoss.github.io/home/wordleaf/
+- Wordleaf: preserved/unpublished for now
+- Nalia: preserved/unpublished for now
+- Storage Guard: preserved/unpublished for now
 
-Nalia: https://foxandmoss.github.io/home/nalia/
-
-
+The custom-domain target is `foxmoss.studio`, but domain purchase/DNS/HTTPS cutover must be established by evidence before this README calls it live.
 
 ## Shared Windows installer rule
 
-All Fox & Moss Windows desktop installers must follow [INSTALLER-CONTRACT.md](INSTALLER-CONTRACT.md). This includes stable versionless download URLs, pre-install release checks, radio-button drive choice, and a hardware/free-space-based Recommended drive.
+All Foxmoss Studio Windows desktop installers must follow [INSTALLER-CONTRACT.md](INSTALLER-CONTRACT.md). This includes stable versionless download URLs, pre-install release checks, radio-button drive choice, and a hardware/free-space-based Recommended drive. Website work that exposes/restores a Windows download must also follow [WEBSITE-AUTHORITY.md](WEBSITE-AUTHORITY.md) and the active Drive Working.
