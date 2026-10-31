@@ -51,20 +51,20 @@ Do not read every owner on every task. Use START HERE + the active Working to se
 
 ### Public source
 
-- `index.html`: root static/canonical HTML, visible site copy, root metadata, hash regions, support/privacy source.
-- `script.js`: homepage hash routing, dynamic behavior and download-manifest application. Do not use runtime hiding as a substitute for correcting canonical HTML when public/no-JS/SEO truth must change.
+- `index.html`: root static/canonical HTML, visible site copy, root metadata, hash regions, support/privacy source. Current root public discovery is Emira-only.
+- `script.js`: homepage hash routing, dynamic behavior and download-manifest application. It preserves old unpublished homepage hashes by redirecting them to Emira; it no longer owns the Emira-only metadata/navigation truth.
 - `style.css`: shared root-page visual system, responsive behavior, focus/motion/layout.
-- `page.js`: dedicated product-page shared behavior where used.
+- `page.js`: dedicated product-page shared behavior where used. While Wordleaf/Nalia are unpublished, it hides unpublished product links from rendered product-page navigation.
 - `emira/index.html`: dedicated Emira product page.
 - `wordleaf/index.html`: preserved Wordleaf page; unpublished by current direction until explicitly restored.
 - `nalia/index.html`: preserved Nalia page; unpublished by current direction until explicitly restored.
-- `sitemap.xml`: crawler route inventory; must agree with current intended public/canonical routes.
-- `robots.txt`: crawler policy and sitemap pointer; pair with sitemap/canonical work.
+- `sitemap.xml`: crawler route inventory; current inventory advertises only root + Emira.
+- `robots.txt`: crawler policy and sitemap pointer; current policy disallows `/home/wordleaf/` and `/home/nalia/` while those pages are unpublished.
 - `downloads/apps.json`: shared platform availability/status manifest. Release availability does **not** itself authorize website visibility.
 - `downloads/release-policy.json`: verified-release sync policy for desktop products.
-- `downloads/StorageGuard-Windows-Installer.exe` and `downloads/storage-guard-latest.json`: Storage Guard public download/update artifacts currently stored in this repository.
+- `downloads/StorageGuard-Windows-Installer.exe` and `downloads/storage-guard-latest.json`: Storage Guard release/update artifacts currently stored in this repository. Their existence does not make Storage Guard public on the studio site.
 - `.github/workflows/sync-downloads.yml`: release-check/sync automation that can update `downloads/apps.json` and commit the manifest back to `gh-pages`.
-- `.github/workflows/verify-downloads.yml`: manifest/endpoint/page-wiring validator. Audit it whenever public product visibility or download markup changes.
+- `.github/workflows/verify-downloads.yml`: manifest/endpoint/page-wiring validator. Its page check now requires Emira’s root availability marker and rejects unpublished product links/download markers in `index.html`.
 - `testfile.html`: stale public test artifact containing only `testing the text.`; no current product/source-owner purpose identified. Do not treat it as a canonical public route.
 - background/avatar/botanical image assets: current visual assets. Asset filenames containing the older `fox-and-moss` form are migration/history, not by themselves naming authority.
 
@@ -81,27 +81,34 @@ Current user direction is:
 - Wordleaf, Nalia, Storage Guard remain preserved but unpublished;
 - retain `Things made with care.` and the handmade botanical identity.
 
-The source still contains older `Fox & Moss` naming and hidden product copy. That is migration debt, not evidence that the current direction changed.
+The source still contains older `Fox & Moss` naming. That is migration debt, not evidence that the current direction changed.
+
+### Visibility reconciliation — 2026-10-31
+
+Direct user instruction authorized immediate cleanup of the other public links. The current root `index.html` is now statically Emira-only rather than relying on JavaScript to hide Wordleaf, Nalia, and Storage Guard. Its title, description, social descriptions, navigation, Home product card, and root content no longer advertise those unpublished products. The old full hidden product manuals were removed from the root canonical HTML; the dedicated Wordleaf/Nalia source pages remain preserved for later restoration.
+
+Crawler/discovery routing was reconciled at the same time:
+
+- `sitemap.xml` now advertises only the root and `/emira/`;
+- `robots.txt` disallows the preserved `/home/wordleaf/` and `/home/nalia/` routes while unpublished;
+- `page.js` hides unpublished Wordleaf/Nalia/Storage Guard links from rendered dedicated-page navigation where that shared script is used;
+- `script.js` keeps only a legacy-hash fallback for old `#wordleaf`, `#nalia`, and `#storage-guard` bookmarks, routing them to `#emira` instead of restoring unpublished content;
+- `.github/workflows/verify-downloads.yml` no longer requires hidden product markers in the root page and now rejects their root links/download markers.
+
+The release manifest may still contain Wordleaf, Nalia, and Storage Guard entries. That is release-channel truth, not website visibility permission.
 
 ## Known baseline issues captured by WEB-001
 
-Commit `4072c96154e7c2edf2655653ab1714a40cc79929` implemented Emira-only presentation mainly in `script.js`. Static `index.html` still contains/advertises the other products and old metadata.
+Commit `4072c96154e7c2edf2655653ab1714a40cc79929` originally implemented Emira-only presentation mainly in `script.js`, leaving static/crawler-visible source inconsistent. That specific root/sitemap/validator visibility drift was repaired on 2026-10-31 under direct user instruction.
 
-Therefore:
+Remaining distinct migration/work items are not evidence that hidden products should be republished:
 
-- runtime presentation may show Emira only;
-- no-JS/static/crawler-visible source can still disagree;
-- dynamic `document.title`/meta replacement is not canonical source cleanup;
-- WEB-001 records this as an observed source/authority conflict to route into the proper implementation Working.
-
-Additional current integration drift found during WEB-001:
-
-- `sitemap.xml` still lists `/wordleaf/` and `/nalia/`, so crawler-visible route truth does not yet match the Emira-only public direction.
-- `.github/workflows/verify-downloads.yml` currently requires Wordleaf, Nalia, and Storage Guard `data-download-app` markers in `index.html`. A canonical HTML cleanup must update the validator in the same audit rather than preserving stale HTML to satisfy stale CI.
-- `downloads/apps.json` still marks Wordleaf, Nalia, and Storage Guard Windows builds as available. That may be valid release truth while the products are intentionally unpublished from the studio site; do not conflate release availability with visibility.
+- older `Fox & Moss` naming remains in current source pending the dedicated identity/domain cutover;
+- dedicated unpublished product HTML is intentionally preserved for later restoration, while crawler access is currently disallowed and shared rendered navigation hides unpublished links;
+- `downloads/apps.json` may report releases for products that are still unpublished from the studio site;
 - `testfile.html` remains in the public Pages tree with no identified canonical purpose.
 
-Do not cite the JS patch alone as proof that homepage canonicalization, metadata, accessibility, crawler visibility, or no-JS acceptance is complete.
+Do not cite the older JS-only patch as proof of current behavior. Read current source and current routing.
 
 ## Read triggers by change class
 
