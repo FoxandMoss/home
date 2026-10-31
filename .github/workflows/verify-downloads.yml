@@ -79,11 +79,13 @@ jobs:
                           raise SystemExit(f"{app}/{platform}: HTTP {response.status}")
           PY
 
-      - name: Confirm page uses shared manifest
+      - name: Confirm page uses shared manifest without unpublished discovery
         shell: bash
         run: |
           set -euo pipefail
           grep -q "downloads/apps.json" script.js
-          grep -q 'data-download-app="wordleaf"' index.html
-          grep -q 'data-download-app="nalia"' index.html
-          grep -q 'data-download-app="storage-guard"' index.html
+          grep -q 'data-download-label="emira:ios"' index.html
+          if grep -Eq 'href="[^"#]*(wordleaf|nalia)/|href="#(wordleaf|nalia|storage-guard)"|data-download-app="(wordleaf|nalia|storage-guard)"' index.html; then
+            echo "Unpublished product discovery leaked into index.html" >&2
+            exit 1
+          fi
