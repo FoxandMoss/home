@@ -1,11 +1,14 @@
-# Fox & Moss Windows Installer Contract
+# Foxmoss Studio Windows Installer Contract
 
-This contract applies to every Fox & Moss Windows desktop installer unless a project explicitly documents a stronger requirement.
+> **Website authority backlink:** This file owns Windows installer/download requirements. When a website Working exposes, restores, or changes a Windows download, first route through [AGENTS.md](AGENTS.md), [WEBSITE-AUTHORITY.md](WEBSITE-AUTHORITY.md), the [Drive START HERE router](https://docs.google.com/document/d/13Tl_Drg-jjCB6U0d7gu7GSnW-ESKFcU00Deqb4WoldM/edit), and the ACTIVE Website Working. Current product/release truth must also be checked before publishing availability. This contract does not by itself make a hidden product public.
+
+This contract applies to every Foxmoss Studio Windows desktop installer unless a project explicitly documents a stronger requirement. Historical material may still use the older `Fox & Moss` name; installer behavior remains owned here unless the current project-specific owner strengthens it.
 
 ## Public download URL
 - Website download buttons must use a versionless GitHub Releases URL such as `/releases/latest/download/<App>-Windows-Installer.exe`, never a version-pinned URL and never a raw Git/LFS repository file.
 - The public button URL should remain stable across normal releases.
 - Release automation replaces the stable-named asset behind that URL with the newest verified installer.
+- Before exposing or restoring a download button, verify the product is currently intended to be public and the referenced current release/asset actually exists. Preserved hidden HTML is not release evidence.
 
 ## Before installation
 - A fresh/manual installer must check the app's public release channel before replacing any application files.
@@ -27,3 +30,6 @@ This contract applies to every Fox & Moss Windows desktop installer unless a pro
 ## Safety
 - Installation/update work must not delete user projects, documents, artwork, settings, or unrelated application data.
 - Cleanup may remove only app-owned stale installer/runtime registrations or processes that the project's cleanup rules explicitly identify.
+
+## Cross-reference maintenance
+If this contract is replaced or materially changes a website-facing download requirement, update [WEBSITE-AUTHORITY.md](WEBSITE-AUTHORITY.md) and the Drive START HERE router when future read routing changes. The ACTIVE Website Working should record the exact effect on public download behavior and validation.
