@@ -1,6 +1,16 @@
 (function () {
   var framePending = false;
 
+  function hideUnpublishedNavigation() {
+    document.querySelectorAll('.main-menu a').forEach(function (link) {
+      var href = link.getAttribute('href') || '';
+      if (href.indexOf('wordleaf/') !== -1 || href.indexOf('nalia/') !== -1 || href.indexOf('storage-guard') !== -1) {
+        var item = link.closest('li');
+        if (item) item.hidden = true;
+      }
+    });
+  }
+
   function updateArtworkPosition() {
     framePending = false;
     var scroller = document.scrollingElement || document.documentElement;
@@ -26,9 +36,14 @@
     resizeObserver.observe(document.body);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", scheduleArtworkPosition);
-  } else {
+  function initializePage() {
+    hideUnpublishedNavigation();
     scheduleArtworkPosition();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePage);
+  } else {
+    initializePage();
   }
 })();
